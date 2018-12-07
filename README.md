@@ -2,7 +2,7 @@
 Projektarbeit Modul 411
 
 ## Angaben zum Code:
-Max. Anz. Zeilen in Methode = 12
+Max. Anz. Zeilen in Methode = 15
 
 Alle Methoden / Funktionen sollen Kommentiert werden
 
