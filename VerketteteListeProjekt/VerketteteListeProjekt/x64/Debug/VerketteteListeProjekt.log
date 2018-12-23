@@ -1,7 +1,3 @@
 ﻿  ListenProgramm.cpp
-d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(132): warning C4326: Der Rückgabetyp von "main" sollte "int" und nicht "void" sein
-d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(144): warning C4473: "scanf_s": nicht genügend Argumente für Formatzeichenfolge übergeben
-  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(144): note: Platzhalter und deren Parameter erwarten 2 variadic-Argumente, es wurden aber 1 variadic-Argumente bereitgestellt.
-  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(144): note: Das fehlende variadic-Argument "2" ist für die Zeichenfolge "%c" erforderlich.
-  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(144): note: Dieses Argument wird als Puffergröße verwendet.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(149): warning C4326: Der Rückgabetyp von "main" sollte "int" und nicht "void" sein
   VerketteteListeProjekt.vcxproj -> D:\PersonenkarteiPointer\VerketteteListeProjekt\x64\Debug\VerketteteListeProjekt.exe

@@ -1,6 +1,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "time.h"
+#include "string.h"
+#include "ctype.h"
 
 /**
  Person:
@@ -8,6 +10,8 @@
  Personen-Objekt welches für die Liste
  wichtig ist. Personen werden erstellt und
  in die Liste eingetragen.
+
+ @David Gataric und Vasily Kozlov bnghjm
 */
 typedef struct Person
 {
@@ -24,7 +28,9 @@ typedef struct Person
  Liest alle Personen aus der Liste aus und
  gibt sie anschliessend in der Konsole aus.
 
- COMMAND_NAME: SHOW
+ COMMAND_NAME: L
+
+ @David Gataric
 */
 void outputList(struPerson* pListStart) {
 	if (pListStart != NULL) {
@@ -33,10 +39,8 @@ void outputList(struPerson* pListStart) {
 		}
 	}
 	else {
-		printf("Die Liste ist leer.!\nErstellen Sie neue Personen mit dem Command: 'CREATE'");
+		printf("Die Liste ist leer.! Erstellen Sie neue Personen mit dem Command: 'C'\n");
 	}
-
-	system("pause");
 
 }
 
@@ -47,6 +51,8 @@ void outputList(struPerson* pListStart) {
  Zahl zwischen 1900 und 2018 zurück.
  
  returns: int randomInt
+
+ @David Gataric und Vasily Kozlov
 */
 int randomiseYear() 
 {
@@ -61,6 +67,8 @@ int randomiseYear()
  A und Z zurück.
  
  returns: char randomChar	
+
+ @David Gataric und Vasily Kozlov
 */
 char randomiseLetter() {
 	char randomChar = 'A' + (rand() % 26);
@@ -78,7 +86,9 @@ char randomiseLetter() {
 
  returns: struPerson pStart
 
- COMMAND_NAME: CREATE
+ COMMAND_NAME: C
+
+ @David Gataric
 */
 struPerson *create(const int anzahl) {
 	struPerson *pStart = NULL;
@@ -109,18 +119,23 @@ struPerson *create(const int anzahl) {
 	return pStart;
 }
 
-bool commandComparator(char *input, char check[10])
-{
-	int i = 0;
-	for (input; *input != '\0'; input++)
-	{
+/**
+ createList:
 
-		if (*input != check[i])
-		{
-			return false;
-		}
-	}
-	return true;
+ Methode, welche eine Liste mit Personen (struPersonen)
+ erstellt. Die Anzahl Personen werden angegeben.
+
+  returns: struPerson pStart
+
+  @David Gataric
+*/
+struPerson* createList()
+{
+	int anzahlPersonen = 0;
+	printf("Personenkartei/create> ");
+	scanf_s("%i", &anzahlPersonen);
+	struPerson *pStart = create(anzahlPersonen);
+	return pStart;
 }
 
 /**
@@ -128,33 +143,33 @@ bool commandComparator(char *input, char check[10])
 
  Ist die Main-Methode des Programms.
  Steuert den ganzen Programmlauf.
+
+ @David Gataric und Vasily Kozlov
 */
 void main() {
 	srand((unsigned)time(NULL));
-	// Versuch mit Commands
-	/*
+
+	struPerson *pStart = NULL;
 	bool program = true;
-	char command[10];
-	char *pCommand = &command[10];
+	char command;
 
-	char createCommandCheck[10] = "CREATE";
-
-	while(program) 
+	while (program)
 	{
-		
-		printf("Personenkartei> ");
-		scanf_s("%c", &command);
+		do {
+			printf("Personenkartei> ");
+			do { command = getchar(); } while (command == '\n');
 
-		if (commandComparator(pCommand, createCommandCheck)) {
-			
-		}
+			command = toupper(command);
+			switch (command) {
+			case 'C': pStart = createList(); break;
+			case 'L': outputList(pStart); break;
+			case 'D': break;
+			case 'Q': program = false; break;
+
+			default: printf("Unbekannter Command!\n"); break;
+			}
+		} while (command != 'Q');
+		printf("\n");
+	}
 
 	}
-	*/
-	int anzahlPersonen = 0;
-	printf("Personenkartei/create> ");
-	scanf_s("%i", &anzahlPersonen);
-	struPerson *pStart = create(anzahlPersonen);
-	outputList(pStart);
-
-}
