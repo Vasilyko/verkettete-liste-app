@@ -1,3 +1,29 @@
 ﻿  ListenProgramm.cpp
-d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(149): warning C4326: Der Rückgabetyp von "main" sollte "int" und nicht "void" sein
-  VerketteteListeProjekt.vcxproj -> D:\PersonenkarteiPointer\VerketteteListeProjekt\x64\Debug\VerketteteListeProjekt.exe
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(187): warning C4473: "scanf_s": nicht genügend Argumente für Formatzeichenfolge übergeben
+  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(187): note: Platzhalter und deren Parameter erwarten 2 variadic-Argumente, es wurden aber 1 variadic-Argumente bereitgestellt.
+  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(187): note: Das fehlende variadic-Argument "2" ist für die Zeichenfolge "%c" erforderlich.
+  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(187): note: Dieses Argument wird als Puffergröße verwendet.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(190): warning C4473: "scanf_s": nicht genügend Argumente für Formatzeichenfolge übergeben
+  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(190): note: Platzhalter und deren Parameter erwarten 2 variadic-Argumente, es wurden aber 1 variadic-Argumente bereitgestellt.
+  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(190): note: Das fehlende variadic-Argument "2" ist für die Zeichenfolge "%c" erforderlich.
+  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(190): note: Dieses Argument wird als Puffergröße verwendet.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(235): warning C4326: Der Rückgabetyp von "main" sollte "int" und nicht "void" sein
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(262): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(262): error C2365: "printf": Erneute Definition; vorherige Definition war "Funktion".
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(946): note: Siehe Deklaration von "printf"
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(263): error C2065: "vorname": nichtdeklarierter Bezeichner
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(263): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(263): error C2365: "scanf_s": Erneute Definition; vorherige Definition war "Funktion".
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1309): note: Siehe Deklaration von "scanf_s"
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(264): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(265): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(265): error C2365: "printf": Erneute Definition; vorherige Definition war "Funktion".
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(946): note: Siehe Deklaration von "printf"
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(266): error C2065: "nachname": nichtdeklarierter Bezeichner
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(266): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(266): error C2365: "scanf_s": Erneute Definition; vorherige Definition war "Funktion".
+  c:\program files (x86)\windows kits\10\include\10.0.16299.0\ucrt\stdio.h(1309): note: Siehe Deklaration von "scanf_s"
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(267): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(268): error C4430: Fehlender Typspezifizierer - int wird angenommen. Hinweis: "default-int" wird von C++ nicht unterstützt.
+d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(268): error C2664: "struPerson *deletePerson(struPerson *,char,char)" : Konvertierung von Argument 1 von "int" in "struPerson *" nicht möglich
+  d:\personenkarteipointer\verkettetelisteprojekt\verkettetelisteprojekt\listenprogramm.cpp(268): note: Die Konvertierung eines ganzzahligen Typs in einen Zeigertyp erfordert ein reinterpret_cast-Operator oder eine Typumwandlung im C- oder Funktionsformat
