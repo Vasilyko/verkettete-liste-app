@@ -193,12 +193,13 @@ COMMAND_NAME: D
 */
 struPerson* deletePerson(struPerson* pStart, char firstname, char lastname) {
 	struPerson* pPreviousPerson = pStart;
-
+	//Wird geprüft ob es das erste Element ist
 	while (pPreviousPerson->vorname[0] == firstname && pPreviousPerson->nachname[0] == lastname)
 	{
 		struPerson* pNext = pPreviousPerson->pNext;
 		free(pPreviousPerson);
-
+		//Falls das erste Element gelöscht wurde, muss der Start Pointer auf den ersten Index verweisen(nicht wie normal auf den nullten), so das
+		//die liste verkettet bleibt<
 		pPreviousPerson = pNext;
 		pStart = pNext;
 		return pStart;
@@ -209,18 +210,37 @@ struPerson* deletePerson(struPerson* pStart, char firstname, char lastname) {
 	{
 		struPerson* pNext = pCurrentPerson->pNext;
 		if (pCurrentPerson->vorname[0] == firstname && pCurrentPerson->nachname[0] == lastname) {
+			//Element wird gelöscht
 			free(pCurrentPerson);
+			//Nach dem löschen muss das vorhärige Element ayöuf das nächste verweisen, so das es richtig verkettet ist
 			pPreviousPerson->pNext = pNext;
 		}
 		else
 		{
+			//Der geprüfte Pointer übergibt seine Werte an pPreviousPerson, damit pPreviousPerson danach wieder
+			//richtig weiter verlink, so das die verketteteListe verkettet bleibt
 			pPreviousPerson = pCurrentPerson;
 		}
+		//Der geprüfte Pointer verschiebt seine Position um ein Element
+		//falls es nicht zu getroffen hat, muss es die nächste Position prüfen
 		pCurrentPerson = pNext;
 	}
+
 	return pStart;
 }
 
+/**
+ deletePersonCaller:
+ Ruft den Loeschvorgang einer Person auf.
+ Man muss dazu noch den Vornamen und Nachnamen
+ angeben.
+
+ param: pStart
+
+ returns: struPerson* deletePerson()
+
+ @David Gataric
+*/
 struPerson* deletePersonCaller(struPerson* pStart)
 {
 	char vorname;
@@ -240,11 +260,20 @@ struPerson* deletePersonCaller(struPerson* pStart)
 }
 
 /*
+ sort:
+ Sortiert die Liste anhand der Namen.
+ Zuerst anhand der Nachnamen und dann
+ durch den Vornamen.
 
+ parameter: pStart
+
+ @Vasily Kozlov
 */
 void sort(struPerson* pStart)
 {
+	clock_t start, stop;
 	bool issorting = true;
+	start = clock();
 	while (issorting) {
 		//Endlose Schleife vermeiden
 		issorting = false;
@@ -289,6 +318,9 @@ void sort(struPerson* pStart)
 			}
 		}
 	}
+
+	stop = clock();
+	printf("Gebrauchte Zeit: %i\n", stop-start);
 }
 /*
 information:
@@ -298,14 +330,13 @@ Gibt die Information aus, mit allen möglichen Befehlen
 */
 void information()
 {
-	printf("C: + Anzahl Elemente eingeben und eine Liste wird erstellt(Cretae)\n");
-	printf("O: fuer die Ausgabe der Liste(Output)\n");
-	printf("D: wird benoetigt falls man die liste löschen moechte(komplett)\n");
+	printf("C: Anzahl Elemente eingeben und eine Liste wird erstellt(Cretae)\n");
+	printf("O: Fuer die Ausgabe der Liste(Output)\n");
+	printf("D: Wird benoetigt falls man die liste loeschen moechte(komplett)\n");
 	printf("Q: Um die Applikation zu schliessen\n");
 	printf("S: Mit dieser Command-Line Sortieren Sie die Liste Alphabetisch (A-Z)\n");
-	printf("P: um ein bestimmtes Element aus der Liste zu loeschen(Vorname und Nachname als Parameter)\n");
+	printf("P: Um ein bestimmtes Element aus der Liste zu loeschen(Vorname und Nachname als Parameter)\n");
 }
-
 
 /*
 main:
@@ -324,6 +355,7 @@ void main() {
 
 	while (program)
 	{
+
 		do {
 			printf("\nPersonenkartei> ");
 			do { command = getchar(); } while (command == '\n');
@@ -332,7 +364,7 @@ void main() {
 			switch (command) {
 			case 'C': pStart = createList(); break;
 			case 'O': outputList(pStart); break;
-			case 'D': deleteList(pStart); break;
+			case 'D': pStart = deleteList(pStart); break;
 			case 'Q': program = false; break;
 			case 'S': sort(pStart); break;
 			case 'P': deletePersonCaller(pStart); break;
